@@ -9,26 +9,21 @@
         <MudItem><a href="#">Shop</a></MudItem>
     </MudGrid>
     <MudSpacer />
-    <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start"/>
+    <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start" />
 </MudAppBar>
 
-<MudCarousel Class="mud-width-full" Style="height:93vh;" ShowArrows="@arrows" ShowBullets="@bullets" EnableSwipeGesture="@enableSwipeGesture" AutoCycle="@autocycle" TData="object">
-    <MudCarouselItem Transition="transition" Color="@Color.Secondary">
-        <div class="d-flex, box" style="height:100%;">
-            <img src="img/Nissan1.jpg" />
-        </div>
+<MudCarousel Style="height:93vh;" ShowArrows="@arrows" ShowBullets="@bullets" EnableSwipeGesture="@enableSwipeGesture" AutoCycle="@autocycle" TData="object">
+    <MudCarouselItem Class="d-flex" Transition="transition" Color="@Color.Secondary">
+        <img class="box" src="img/Nissan1.jpg" />
     </MudCarouselItem>
-    <MudCarouselItem Transition="transition" Color="@Color.Secondary">
-        <div class="d-flex, box" style="height:100%;">
-            <img src="img/Nissan2.jpg"/> 
-        </div>
+    <MudCarouselItem Class="d-flex" Transition="transition" Color="@Color.Secondary">
+        <img class="box" src="img/Nissan2.jpg" />
     </MudCarouselItem>
-    <MudCarouselItem Transition="transition" Color="@Color.Secondary">
-        <div class="d-flex, box" style="height:100%;">
-            <img src="img/Nissan3.jpg" />
-        </div>
+    <MudCarouselItem Class="d-flex" Transition="transition" Color="@Color.Secondary">
+        <img class="box" src="img/Nissan3.jpg" />
     </MudCarouselItem>
 </MudCarousel>
+
 
 <div class="text">
     <h1>car <br />experience</h1>
@@ -44,13 +39,12 @@
 </div>
 
 <div>
-
 </div>
 
 @code {
-    private bool arrows = false;
-    private bool bullets = false;
+    private bool arrows = true;
+    private bool bullets = true;
     private bool enableSwipeGesture = true;
-    private bool autocycle = true;
+    private bool autocycle = false;
     private Transition transition = Transition.Slide;
 }
