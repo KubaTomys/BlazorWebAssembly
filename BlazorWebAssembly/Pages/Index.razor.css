@@ -1,0 +1,60 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+a{
+    position: relative;
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    top: 0;
+    left: 100%;
+    animation: 1s ease-in-out 0.5s 1 menuItem;
+}
+
+.box img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: 0 -200px;
+}
+
+.text{
+    position: relative;
+    top: -80px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+    .text h1 {
+        font-size: 110px;
+        letter-spacing: 5px;
+        color: #0b7af3;
+        font-weight: 500;
+        margin-bottom: 80px;
+    }
+
+.text p{
+    font-size: 30px;
+    font-weight: 400;
+}
+
+.text p:nth-child(3) {
+    color: rgb(16, 187, 255);
+}
+
+
+
+@keyframes menuItem{
+    0%{
+        top: -200%;
+        opacity: 0;
+    }
+    100%{
+        top: 0;
+        opacity: 1;
+    }
+}
