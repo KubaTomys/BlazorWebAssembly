@@ -2,8 +2,9 @@
 
 <PageTitle>Index</PageTitle>
 
-<MudAppBar Fixed="false" Style="@($"color: black; background:white;")" Elevation="0" class="bar">
+<MudAppBar Fixed="false" Style="@($"color: black; background: white;")" Elevation="0" class="bar">
     <MudGrid Spacing="7">
+        <MudItem Style="@($"padding: 25px;")"><img src="img/logo.png" class="logo"/></MudItem>
         <MudItem><a href="#">Work</a></MudItem>
         <MudItem><a href="#">Profile</a></MudItem>
         <MudItem><a href="#">Shop</a></MudItem>
@@ -29,7 +30,7 @@
     <h1>car <br />experience</h1>
 
     <p>
-        Pawel Nolbert is a color artist,
+        Pawel Nolbert is a color artist,<br/>
         specialized in creating visually rich imagery.
     </p>
 
@@ -38,14 +39,58 @@
     </p>
 </div>
 
-<div>
+<div class="container">
+
+    <div class="box-grid">
+
+        <div class="content-grid">
+            <img src="img/Nissan1.jpg"/><div>Nissan Skyline R34</div>
+        </div>
+        <div class="content-grid">
+            <img src="img/Toyota2.jpg" /><div>Toyota Supra</div>
+        </div>
+        <div class="content-grid">
+            <img src="img/audi.jpg" style="object-position: bottom;"/><div>Audi R8</div>
+        </div>
+        <div class="content-grid">
+            <img src="img/Toyota1.jpg" /><div>Toyota Supra</div>
+        </div>
+        <div class="content-grid">
+            <img src="img/Nissan2.jpg" /><div>Nissan Skyline R34</div>
+        </div>
+        <div class="content-grid">
+            <img src="img/Nissan3.jpg" /><div>Nissan Sklyine R34</div>
+        </div>
+        <div class="content-grid">
+            <img src="img/alpine.jpg" /><div>Alpine A110</div>
+        </div>
+        <div class="content-grid">
+            <img src="img/jeep.jpg" /><div>Jeep</div>
+        </div>
+        <div class="content-grid">
+            <img src="img/ferrari.jpg" /><div>Ferrari interior</div>
+        </div>
+
+    </div>
 
 </div>
 
+<MudScrollToTop>
+    <MudFab Icon="@Icons.Filled.KeyboardArrowUp" IconSize="Size.Large" Color="Color.Secondary"/>
+</MudScrollToTop>
+
+<footer>
+    Copyright © 2022 CarsWorld Inc. All Rights Reserved.
+</footer>
+
+
+
+
 @code {
-    private bool arrows = true;
-    private bool bullets = true;
+    private bool arrows = false;
+    private bool bullets = false;
     private bool enableSwipeGesture = true;
-    private bool autocycle = false;
+    private bool autocycle = true;
     private Transition transition = Transition.Slide;
+  
 }
