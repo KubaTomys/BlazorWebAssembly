@@ -1,4 +1,7 @@
 ﻿@page "/"
+@using ChartJs.Blazor.PieChart
+
+
 
 <PageTitle>Index</PageTitle>
 
@@ -65,7 +68,7 @@
             <img src="img/alpine.jpg" /><div>Alpine A110</div>
         </div>
         <div class="content-grid">
-            <img src="img/jeep.jpg" /><div>Jeep</div>
+            <img src="img/jeep.jpg" /><div>Jeep Wrangler</div>
         </div>
         <div class="content-grid">
             <img src="img/ferrari.jpg" /><div>Ferrari interior</div>
@@ -74,6 +77,10 @@
     </div>
 
 </div>
+@*
+
+<Chart Config="_config"></Chart>
+*@
 
 <MudScrollToTop>
     <MudFab Icon="@Icons.Filled.KeyboardArrowUp" IconSize="Size.Large" Color="Color.Secondary"/>

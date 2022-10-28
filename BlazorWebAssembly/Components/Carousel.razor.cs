@@ -6,6 +6,7 @@ namespace BlazorWebAssembly.Components
     {
 
         [Parameter]
-        public RenderFragment? ChildContent { get; set; } 
+        public RenderFragment? ChildContent { get; set; }
+  
     }
 }
