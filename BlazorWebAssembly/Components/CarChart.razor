@@ -1,13 +1,19 @@
-﻿@using ChartJs.Blazor.PieChart
+﻿@using ChartJs.Blazor.Common
+@using ChartJs.Blazor.PieChart
+@using ChartJs.Blazor.Util
 
 
 <h3>Chart</h3>
+
+
+<Chart Config="_config"></Chart>
 
 @code {
     private PieConfig _config;
 
     protected override void OnInitialized()
     {
+      
         _config = new PieConfig
             {
                 Options = new PieOptions
