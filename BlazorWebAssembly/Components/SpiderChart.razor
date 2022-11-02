@@ -1,0 +1,54 @@
+﻿@using ChartJs.Blazor.Common
+@using ChartJs.Blazor.RadarChart
+@using ChartJs.Blazor.Util
+
+
+<h3>Chart</h3>
+
+
+<Chart Config="_config"></Chart>
+
+@code {
+    private RadarConfig _config;
+
+    protected override void OnInitialized()
+    {
+
+        _config = new RadarConfig
+            {
+                
+                Options = new RadarOptions
+                {
+                    
+                    Responsive = true,
+                    Title = new OptionsTitle
+                    {
+                        Display = true,
+                        Text = "ChartJs.Blazor Pie Chart"
+                    }
+                }
+            };
+
+        foreach (string color in new[] { "Red", "Yellow", "Green", "Blue" })
+        {
+            _config.Data.Labels.Add(color);
+        }
+        RadarDataset<int> dataset0 = new RadarDataset<int>(new[] { 0, 0, 0, 0 })
+            {
+                Label = "Data0",
+                BorderColor = ColorUtil.ColorString(0, 0, 0,1),
+                BackgroundColor = ColorUtil.ColorString(0, 0, 0, 1), // Slice 2 aka "Yellow"
+
+            };
+        RadarDataset<int> dataset1 = new RadarDataset<int>(new[] { 6, 5, 3, 7 })
+            {
+                Label ="Data1",
+                BorderColor = ColorUtil.ColorString(255, 205, 86),
+                BackgroundColor = ColorUtil.ColorString(255, 205, 86, 0.6), // Slice 2 aka "Yellow"
+
+            };
+    
+        _config.Data.Datasets.Add(dataset0);
+        _config.Data.Datasets.Add(dataset1);
+    }
+}
