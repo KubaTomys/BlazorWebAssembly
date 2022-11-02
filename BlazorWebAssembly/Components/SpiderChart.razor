@@ -3,7 +3,7 @@
 @using ChartJs.Blazor.Util
 
 
-<h3>Chart</h3>
+<h3 style="width: 100%; text-align: center; margin-top: 10vh;">RadarChart</h3>
 
 
 <Chart Config="_config"></Chart>
@@ -24,20 +24,20 @@
                     Title = new OptionsTitle
                     {
                         Display = true,
-                        Text = "ChartJs.Blazor Pie Chart"
+                        Text = "My test charts"
                     }
                 }
             };
-
-        foreach (string color in new[] { "Red", "Yellow", "Green", "Blue" })
-        {
-            _config.Data.Labels.Add(color);
-        }
-        RadarDataset<int> dataset0 = new RadarDataset<int>(new[] { 0, 0, 0, 0 })
+                
+        foreach (string color in new[] { "Nissan", "Toyota", "Porsche", "Honda" })
+            {
+                _config.Data.Labels.Add(color);
+            }
+        RadarDataset<int> dataset0 = new RadarDataset<int>(new[] { 4, 5, 10, 5})
             {
                 Label = "Data0",
-                BorderColor = ColorUtil.ColorString(0, 0, 0,1),
-                BackgroundColor = ColorUtil.ColorString(0, 0, 0, 1), // Slice 2 aka "Yellow"
+                BorderColor = ColorUtil.ColorString(0, 0, 0, 1),
+                BackgroundColor = ColorUtil.ColorString(0, 0, 0, 0.5), // Slice 2 aka "Yellow"
 
             };
         RadarDataset<int> dataset1 = new RadarDataset<int>(new[] { 6, 5, 3, 7 })
@@ -47,8 +47,16 @@
                 BackgroundColor = ColorUtil.ColorString(255, 205, 86, 0.6), // Slice 2 aka "Yellow"
 
             };
+        RadarDataset<int> dataset2 = new RadarDataset<int>(new[] { 10, 10, 8, 7 })
+            {
+                Label ="Data2",
+                BorderColor = ColorUtil.ColorString(255, 100, 86),
+                BackgroundColor = ColorUtil.ColorString(255, 100, 86, 0.6), // Slice 2 aka "Yellow"
+
+            };
     
         _config.Data.Datasets.Add(dataset0);
         _config.Data.Datasets.Add(dataset1);
+        _config.Data.Datasets.Add(dataset2);
     }
 }

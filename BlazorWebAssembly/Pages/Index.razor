@@ -8,9 +8,9 @@
 <MudAppBar Fixed="false" Style="@($"color: black; background: white;")" Elevation="0" class="bar">
     <MudGrid Spacing="7">
         <MudItem Style="@($"padding: 25px;")"><img src="img/logo.png" class="logo"/></MudItem>
-        <MudItem><a href="#">Work</a></MudItem>
-        <MudItem><a href="#">Profile</a></MudItem>
-        <MudItem><a href="#">Shop</a></MudItem>
+        <MudItem><Animation Effect="@Effect.Wobble" Enabled="play" Speed="@Speed.Slower" IterationCount="1" OnAnimationEnd="MouseOut"><a href="#" @onmouseover="MouseOver">Profile</a></Animation></MudItem>
+        <MudItem><Animation Effect="@Effect.Jello" Enabled="play1" Speed="@Speed.Slower" IterationCount="1" OnAnimationEnd="MouseOut1"><a href="#" @onmouseover="MouseOver1">Gallery</a></Animation></MudItem>
+        <MudItem><Animation Effect="@Effect.Wobble" Enabled="play2" Speed="@Speed.Slower" IterationCount="1" OnAnimationEnd="MouseOut2"><a href="#" @onmouseover="MouseOver2">Shop</a></Animation></MudItem>
     </MudGrid>
     <MudSpacer />
     <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start" />
@@ -41,6 +41,8 @@
         Design, Art, Brands
     </p>
 </div>
+
+
 
 <div class="container">
 
@@ -78,11 +80,6 @@
 
 </div>
 
-<Carousel></Carousel>
-
-<CarChart></CarChart>
-
-<SpiderChart></SpiderChart>
 
 <MudScrollToTop>
     <MudFab Icon="@Icons.Filled.KeyboardArrowUp" IconSize="Size.Large" Color="Color.Secondary"/>
@@ -101,5 +98,16 @@
     private bool enableSwipeGesture = true;
     private bool autocycle = true;
     private Transition transition = Transition.Slide;
-  
+    private bool play = false;
+    private bool play1 = false;
+    private bool play2 = false;
+
+    private void MouseOver() => play = true;
+    private void MouseOut() => play = false; 
+    
+    private void MouseOver1() => play1 = true;
+    private void MouseOut1() => play1 = false; 
+
+    private void MouseOver2() => play2 = true;
+    private void MouseOut2() => play2 = false;
 }
