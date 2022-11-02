@@ -7,7 +7,7 @@
 
 <MudAppBar Fixed="false" Style="@($"color: black; background: white;")" Elevation="0" class="bar">
     <MudGrid Spacing="7">
-        <MudItem Style="@($"padding: 25px;")"><img src="img/logo.png" class="logo"/></MudItem>
+        <MudItem Style="@($"padding: 25px;")"><img src="img/logo.png" class="logo" /></MudItem>
         <MudItem><Animation Effect="@Effect.Wobble" Enabled="play" Speed="@Speed.Slower" IterationCount="1" OnAnimationEnd="MouseOut"><a href="#" @onmouseover="MouseOver">Profile</a></Animation></MudItem>
         <MudItem><Animation Effect="@Effect.Jello" Enabled="play1" Speed="@Speed.Slower" IterationCount="1" OnAnimationEnd="MouseOut1"><a href="#" @onmouseover="MouseOver1">Gallery</a></Animation></MudItem>
         <MudItem><Animation Effect="@Effect.Wobble" Enabled="play2" Speed="@Speed.Slower" IterationCount="1" OnAnimationEnd="MouseOut2"><a href="#" @onmouseover="MouseOver2">Shop</a></Animation></MudItem>
@@ -33,7 +33,7 @@
     <h1>car <br />experience</h1>
 
     <p>
-        Pawel Nolbert is a color artist,<br/>
+        Pawel Nolbert is a color artist,<br />
         specialized in creating visually rich imagery.
     </p>
 
@@ -49,13 +49,13 @@
     <div class="box-grid">
 
         <div class="content-grid">
-            <img src="img/Nissan1.jpg"/><div>Nissan Skyline R34</div>
+                <img src="img/Nissan1.jpg" /><div>Nissan Skyline R34</div>
         </div>
         <div class="content-grid">
             <img src="img/Toyota2.jpg" /><div>Toyota Supra</div>
         </div>
         <div class="content-grid">
-            <img src="img/audi.jpg" style="object-position: bottom;"/><div>Audi R8</div>
+            <img src="img/audi.jpg" style="object-position: bottom;" /><div>Audi R8</div>
         </div>
         <div class="content-grid">
             <img src="img/Toyota1.jpg" /><div>Toyota Supra</div>
@@ -73,7 +73,9 @@
             <img src="img/jeep.jpg" /><div>Jeep Wrangler</div>
         </div>
         <div class="content-grid">
+            <MyAnimation>
             <img src="img/ferrari.jpg" /><div>Ferrari interior</div>
+            </MyAnimation>
         </div>
 
     </div>
@@ -82,7 +84,7 @@
 
 
 <MudScrollToTop>
-    <MudFab Icon="@Icons.Filled.KeyboardArrowUp" IconSize="Size.Large" Color="Color.Secondary"/>
+    <MudFab Icon="@Icons.Filled.KeyboardArrowUp" IconSize="Size.Large" Color="Color.Secondary" />
 </MudScrollToTop>
 
 <footer>
@@ -103,10 +105,10 @@
     private bool play2 = false;
 
     private void MouseOver() => play = true;
-    private void MouseOut() => play = false; 
-    
+    private void MouseOut() => play = false;
+
     private void MouseOver1() => play1 = true;
-    private void MouseOut1() => play1 = false; 
+    private void MouseOut1() => play1 = false;
 
     private void MouseOver2() => play2 = true;
     private void MouseOut2() => play2 = false;

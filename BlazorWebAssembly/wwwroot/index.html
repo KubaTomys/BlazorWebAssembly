@@ -30,6 +30,18 @@
     <!-- This is the glue between Blazor and Chart.js -->
     <script src="_content/ChartJs.Blazor.Fork/ChartJsBlazorInterop.js"></script>
     <script src="_content/BlazorAnimation/blazorAnimationInterop.js"></script>
-</body>
+    <script>MyDOMGetBoundingClientRect = (element, parm) => { return element.getBoundingClientRect(); };</script>
+    <script>
+        window.onscroll = function () {
+            if (window.scrollInfoService != null)
+                window.scrollInfoService.invokeMethodAsync('OnScroll', window.pageYOffset);
+        }
+    </script>
+    <script>
+        window.RegisterScrollInfoService = (scrollInfoService) => {
+            window.scrollInfoService = scrollInfoService;
+        }
+    </script>
+</body >
 
-</html>
+</html >
