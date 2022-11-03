@@ -5,12 +5,32 @@
 
 <PageTitle>Index</PageTitle>
 
-<MudAppBar Fixed="false" Style="@($"color: black; background: white;")" Elevation="0" class="bar">
+<MudAppBar Fixed="true" Style="@($"color: black; background: white;")" Elevation="0" class="bar">
     <MudGrid Spacing="7">
         <MudItem Style="@($"padding: 25px;")"><img src="img/logo.png" class="logo" /></MudItem>
         <MudItem><Animation Effect="@Effect.Wobble" Enabled="play" Speed="@Speed.Slower" IterationCount="1" OnAnimationEnd="MouseOut"><a href="#" @onmouseover="MouseOver">Profile</a></Animation></MudItem>
         <MudItem><Animation Effect="@Effect.Jello" Enabled="play1" Speed="@Speed.Slower" IterationCount="1" OnAnimationEnd="MouseOut1"><a href="#" @onmouseover="MouseOver1">Gallery</a></Animation></MudItem>
         <MudItem><Animation Effect="@Effect.Wobble" Enabled="play2" Speed="@Speed.Slower" IterationCount="1" OnAnimationEnd="MouseOut2"><a href="#" @onmouseover="MouseOver2">Shop</a></Animation></MudItem>
+        <MudItem>
+            <MudPaper Style="@GetSizeIconStyle("sm")" Class=" pa-1 d-inline-block d-sm-none">
+                Extra Small
+            </MudPaper>
+            <MudPaper Style="@GetSizeIconStyle("sm")" Class=" pa-1 d-none d-sm-inline-block d-md-none">
+                Small
+            </MudPaper>
+            <MudPaper Style="@GetSizeIconStyle("md")" Class=" pa-1 d-none d-md-inline-block d-lg-none">
+                Medium
+            </MudPaper>
+            <MudPaper Style="@GetSizeIconStyle("lg")" Class=" pa-1 d-none d-lg-inline-block d-xl-none">
+                Large
+            </MudPaper>
+            <MudPaper Style="@GetSizeIconStyle("xl")" Class=" pa-1 d-none d-xl-inline-block d-xx-none">
+                Extra Large
+            </MudPaper>
+            <MudPaper Style="@GetSizeIconStyle("xx")" Class=" pa-1 d-none d-xx-inline-block">
+                Extra Extra Large
+            </MudPaper>
+        </MudItem>
     </MudGrid>
     <MudSpacer />
     <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start" />
@@ -48,52 +68,59 @@
 
     <div class="box-grid">
 
+            <MyAnimation  VisualEffect="@Effect.FadeInLeft">
         <div class="content-grid">
-            <MyAnimation VisualEffect="@Effect.FadeInLeft">
-                <img src="img/Nissan1.jpg" /><div>Nissan Skyline R34</div>
+                <div>Nissan Skyline R34</div>
+                <img src="img/Nissan1.jpg" />
+        </div>
             </MyAnimation>
-        </div>
-        
+
         <div class="content-grid">
-            
-                <img src="img/Toyota2.jpg" /><div>Toyota Supra</div>
+
+            <img src="img/Toyota2.jpg" />
+            <div>Toyota Supra</div>
 
         </div>
 
         <div class="content-grid">
-            
-                <img src="img/audi.jpg" style="object-position: bottom;" /><div>Audi R8</div>
-            
+
+            <img src="img/audi.jpg" style="object-position: bottom;" />
+            <div>Audi R8</div>
+
         </div>
         <div class="content-grid">
-           
-                <img src="img/Toyota1.jpg" /><div>Toyota Supra</div>
-            
+
+            <img src="img/Toyota1.jpg" />
+            <div>Toyota Supra</div>
+
         </div>
         <div class="content-grid">
-            
-                <img src="img/Nissan2.jpg" /><div>Nissan Skyline R34</div>
-            
+            <img src="img/Nissan2.jpg" />
+            <div>Nissan Skyline R34</div>
         </div>
         <div class="content-grid">
-            
-                <img src="img/Nissan3.jpg" /><div>Nissan Sklyine R34</div>
-           
+
+            <img src="img/Nissan3.jpg" />
+            <div>Nissan Sklyine R34</div>
+
         </div>
         <div class="content-grid">
-            
-                <img src="img/alpine.jpg" /><div>Alpine A110</div>
-            
+
+            <img src="img/alpine.jpg" />
+            <div>Alpine A110</div>
+
         </div>
         <div class="content-grid">
-           
-                <img src="img/jeep.jpg" /><div>Jeep Wrangler</div>
+
+            <img src="img/jeep.jpg" />
+            <div>Jeep Wrangler</div>
 
         </div>
         <div class="content-grid">
             <MyAnimation VisualEffect="@Effect.FadeInRight">
-                <img src="img/ferrari.jpg" /><div>Ferrari interior</div>
+                <img src="img/ferrari.jpg" />
             </MyAnimation>
+            <div>Ferrari interior</div>
         </div>
 
     </div>
@@ -113,6 +140,34 @@
 
 
 @code {
+    MudTheme Theme = new MudTheme();
+    private string GetSizeIconStyle(string size)
+    {
+        var result = "";
+        switch (size.ToLower())
+        {
+            case "xx":
+                result += $" color:{Theme.Palette.ErrorContrastText}; background:{Theme.Palette.Error};";
+                break;
+            case "xl":
+                result += $" color:{Theme.Palette.TertiaryContrastText}; background:{Theme.Palette.Tertiary};";
+                break;
+            case "lg":
+                result += $" color:{Theme.Palette.WarningContrastText}; background:{Theme.Palette.Warning};";
+                break;
+            case "md":
+                result += $" color:{Theme.Palette.SuccessContrastText}; background:{Theme.Palette.Success};";
+                break;
+            case "sm":
+                result += $" color:{Theme.Palette.PrimaryContrastText}; background:{Theme.Palette.Primary};";
+                break;
+            default:
+                result += $" color:{Theme.Palette.SecondaryContrastText}; background:{Theme.Palette.Secondary};";
+                break;
+        }
+        result += "width: 150px;";
+        return result;
+    }
     private bool arrows = false;
     private bool bullets = false;
     private bool enableSwipeGesture = true;

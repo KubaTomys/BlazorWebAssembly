@@ -16,6 +16,8 @@ namespace BlazorWebAssembly.Components
         public RenderFragment? ChildContent { get; set; }
         [Parameter]
         public AnimationEffect VisualEffect { get; set; } = Effect.BounceIn;
+        [Parameter]
+        public string Style { get; set; } = "";
         public bool Enabled { get; set; } = false;
         public BoundingClientRect? BoundingClientRect { get; set; } = default;
         protected ElementReference? ElementReference { get; set; }
