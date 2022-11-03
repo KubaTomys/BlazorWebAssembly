@@ -1,4 +1,5 @@
-﻿using BlazorWebAssembly.Services;
+﻿using BlazorAnimation;
+using BlazorWebAssembly.Services;
 using Microsoft.AspNetCore.Components;
 using Microsoft.JSInterop;
 using MudBlazor.Interop;
@@ -13,7 +14,8 @@ namespace BlazorWebAssembly.Components
         public IJSRuntime JSRuntime { get; set; } = default!;
         [Parameter]
         public RenderFragment? ChildContent { get; set; }
-
+        [Parameter]
+        public AnimationEffect VisualEffect { get; set; } = Effect.BounceIn;
         public bool Enabled { get; set; } = false;
         public BoundingClientRect? BoundingClientRect { get; set; } = default;
         protected ElementReference? ElementReference { get; set; }
@@ -23,7 +25,7 @@ namespace BlazorWebAssembly.Components
             EventHandler<int> eventHandler = new EventHandler<int>(async (s, e) => await ScrollInfoService_OnScroll(s, e));
             ScrollInfoService.OnScroll += eventHandler;
             base.OnInitialized();
-
+            
         }
 
         private async Task<int> ScrollInfoService_OnScroll(object? sender, int e)
@@ -35,7 +37,7 @@ namespace BlazorWebAssembly.Components
                 return default;
             }
             var yValue = ScrollInfoService.YValue;
-            if (yValue > BoundingClientRect.Top +400 )
+            if (yValue > BoundingClientRect.Top - 600)
             {
                 Enabled = true;
             }

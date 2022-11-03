@@ -1,13 +1,12 @@
 ﻿@inherits MyAnimationBase
 @using BlazorWebAssembly.Services
 
-<Animation  Effect="@Effect.SlideInRight" Enabled="@Enabled"  Speed="@Speed.Slower" IterationCount="1">
+<Animation  Effect="@VisualEffect" Enabled="@Enabled"  Speed="@Speed.Slower" IterationCount="1">
 <div @ref=ElementReference>
     @ChildContent
 </div>
 </Animation>
 
 @code {
-  
-
+    
 }
