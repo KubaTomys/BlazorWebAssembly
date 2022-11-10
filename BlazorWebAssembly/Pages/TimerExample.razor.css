@@ -1,0 +1,37 @@
+﻿body {
+}
+
+
+.item {
+    padding-left: 90px;
+    padding-right: 9px;
+    padding-top: 4px;
+    padding-bottom: 2px;
+    border-color: blue;
+    border-width: 2px;
+    border-radius: 5px;
+    min-height: 10px;
+    min-width: 10px;
+    background-color: lightblue;
+    color: darkorange;
+    width: 90px;
+    height: 20px;
+}
+
+
+.version {
+    display: flex;
+    border-radius: 15px;
+    width: 30%;
+    background-color: coral;
+    color: white;
+    justify-content: center;
+    transition: width 1s ease-in-out;
+}
+
+.version-bigger {
+    width: 90%;
+}
+
+.version .bigger {
+}
