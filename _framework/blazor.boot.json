@@ -8,7 +8,7 @@
   "resources": {
     "assembly": {
       "BlazorAnimation.dll": "sha256-t3u\/1PpAuhK7jKpFMEaTv5yF95UDyTtGk8LUQ+ftw8s=",
-      "BlazorWebAssembly.dll": "sha256-uiJxuQeQVEAHwy526D0AZR+EIKBKQQ6u6n2VPWDldpY=",
+      "BlazorWebAssembly.dll": "sha256-VD4dyWjuO5BOoU7PUdFvQPO0uVIWNFK8uROK8mCcNgM=",
       "ChartJs.Blazor.dll": "sha256-0ciRJps8EWsbo3zIh4fYA2+QBnZIl1lSu4aydLaQDEo=",
       "Microsoft.AspNetCore.Components.dll": "sha256-a3TfLjKmceFGxtkF5ZdWCh93hv1hs86WT2IAgOcKb5w=",
       "Microsoft.AspNetCore.Components.Web.dll": "sha256-Roe9poEJQLUKVXy\/\/PycpWCbcg60IP2Ed09On6Yjov0=",
