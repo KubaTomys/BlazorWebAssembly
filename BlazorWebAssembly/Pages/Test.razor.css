@@ -1,0 +1,32 @@
+﻿body {
+    width: 100vw;
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    background-color: black;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+
+.box-grid {
+    width: 60%;
+    display: grid;
+}
+
+img {
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+@media only screen and (min-width: 960px) {
+    .box-grid {
+        width: 60%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+

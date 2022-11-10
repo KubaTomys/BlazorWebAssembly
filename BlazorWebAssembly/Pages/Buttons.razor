@@ -1,0 +1,58 @@
+﻿@page "/buttons"
+
+<div class="myBox3">
+    <div class="navigation">
+        <button @onclick=@(()=>AddClass1()) class="@MyClass1">BUTTON</button>
+        <button @onclick=@(()=>AddClass2()) class="@MyClass2">BUTTON</button>
+        <button @onclick=@(()=>AddClass3()) class="@MyClass3">BUTTON</button>
+        <button class="nav-but" style="width: 40vw; border: none; border-bottom: 3px solid #B0B0B0; background-color: white; "></button>
+    </div>
+    <div class="boxxx">
+    </div>
+</div>
+
+@code {
+    private int buttonIndex = 0;
+    public string MyClass1 = "nav-but";
+    public string MyClass2 = "nav-but";
+    public string MyClass3 = "nav-but";
+
+    public string AddClass1()
+    {
+        if (MyClass1 == "nav-but")
+        {
+            MyClass1 = "selected_button";
+        }
+        else
+        {
+            MyClass1 = "nav-but";
+        }
+        return MyClass1;
+    }
+
+    public string AddClass2()
+    {
+        if (MyClass2 == "nav-but")
+        {
+            MyClass2 = "selected_button";
+        }
+        else
+        {
+            MyClass2 = "nav-but";
+        }
+        return MyClass2;
+    }
+
+    public string AddClass3()
+    {
+        if (MyClass3 == "nav-but")
+        {
+            MyClass3 = "selected_button";
+        }
+        else
+        {
+            MyClass3 = "nav-but";
+        }
+        return MyClass3;
+    }
+}

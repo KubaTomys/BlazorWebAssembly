@@ -1,0 +1,104 @@
+﻿@page "/test"
+
+<PageTitle>Counter</PageTitle>
+
+<div class="container">
+
+    <div class="box-grid">
+
+        <div class="box-grid_1/2">
+        
+            <div class="content-grid">
+                <MyAnimation  VisualEffect="@Effect.FadeInLeft">
+                    <img src="img/Nissan1.jpg" />
+                </MyAnimation>
+            </div>
+
+            <div class="content-grid">
+                <img src="img/Toyota2.jpg"/>
+            </div>
+
+            <div class="content-grid">
+                <img src="img/audi.jpg"/>
+            </div>
+
+            <div class="content-grid">
+                <img src="img/Toyota1.jpg" />
+            </div>
+
+            <div class="content-grid">
+                <img src="img/Nissan2.jpg" />
+            </div>
+        
+        </div>
+
+
+        <div class="box_grid_2/2">
+        
+            <div class="content-grid">
+                <img src="img/Nissan3.jpg" height="500"/>
+            </div>
+
+            <div class="content-grid">
+                <img src="img/alpine.jpg" />
+            </div>
+
+            <div class="content-grid">
+                <img src="img/jeep.jpg" />
+            </div>
+
+            <div class="content-grid">
+                    <img src="img/ferrari.jpg" />
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+@code {
+    MudTheme Theme = new MudTheme();
+    private string GetSizeIconStyle(string size)
+    {
+        var result = "";
+        switch (size.ToLower())
+        {
+            case "xx":
+                result += $" color:{Theme.Palette.ErrorContrastText}; background:{Theme.Palette.Error};";
+                break;
+            case "xl":
+                result += $" color:{Theme.Palette.TertiaryContrastText}; background:{Theme.Palette.Tertiary};";
+                break;
+            case "lg":
+                result += $" color:{Theme.Palette.WarningContrastText}; background:{Theme.Palette.Warning};";
+                break;
+            case "md":
+                result += $" color:{Theme.Palette.SuccessContrastText}; background:{Theme.Palette.Success};";
+                break;
+            case "sm":
+                result += $" color:{Theme.Palette.PrimaryContrastText}; background:{Theme.Palette.Primary};";
+                break;
+            default:
+                result += $" color:{Theme.Palette.SecondaryContrastText}; background:{Theme.Palette.Secondary};";
+                break;
+        }
+        result += "width: 150px;";
+        return result;
+    }
+
+
+    private bool play = false;
+    private bool play1 = false;
+    private bool play2 = false;
+
+    private void MouseOver() => play = true;
+    private void MouseOut() => play = false;
+
+    private void MouseOver1() => play1 = true;
+    private void MouseOut1() => play1 = false;
+
+    private void MouseOver2() => play2 = true;
+    private void MouseOut2() => play2 = false;
+}
+
