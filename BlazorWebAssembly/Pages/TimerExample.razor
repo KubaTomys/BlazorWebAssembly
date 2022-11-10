@@ -1,0 +1,23 @@
+﻿@inherits TimerExampleBase
+@page "/timerexample"
+
+<div style="margin:auto; margin-top:20px;" class="@GetClass()">
+    <button @onclick=@(MakeItBigger)>my content</button>
+</div>
+<button @onclick=@(()=>StartStop())>START/STOP</button>
+
+
+@code {
+
+    private int margin = 50;
+
+    public string GetClass()
+    {
+        return $"version {(isBig ? " version-bigger" : "")}";
+    }
+    public void MakeItBigger()
+    {
+        margin += 10;
+    }
+
+}
