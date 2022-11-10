@@ -19,6 +19,13 @@ jobs:
             - name: Publish .NET Core Project
               run: dotnet publish BlazorWebAssembly/BlazorWebAssembly.csproj -c Release -o release --nologo
               
+            - name: Rewrite base href
+              uses: SteveSandersonMS/ghaction-rewrite-base-href@v1
+              with:
+                html_path: release/wwwroot/index.html
+                base_href: /BlazorWebAssembly/
+              
+              
             - name: copy index.html to 404.html
               run: cp release/wwwroot/index.html release/wwwroot/404.html
 
